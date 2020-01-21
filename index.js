@@ -2,14 +2,17 @@
 const express = require("express");
 const getGasStations = require("./modules/getGasStations.js");
 const getzipCode = require("./modules/getzipCode");
-
+// const port = process.env.PORT || 3030;
 const bestMatches = require("./modules/bestMatches.js");
 const addCoordinates = require("./modules/addCoordinates.js");
 let app = express();
-app.listen(3000, () => console.log("listening at 3000"));
+app.listen(process.env.PORT || 3000)
 app.use(express.static("public"));
 app.use(express.json());
-app.post("/api", (request, response) => {
+app.get("/", (req, res) => {
+  res.sendFile('index.html')
+});
+app.post("/", (request, response) => {
   let coordinates = request.body;
 
   let zipcode = getzipCode(coordinates);

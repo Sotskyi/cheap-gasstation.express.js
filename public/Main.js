@@ -17,7 +17,7 @@ async function main() {
     zoom: 13
   }); //<---- start render map
 
-  let sendLocation = await fetch("api", {
+  let sendLocation = await fetch("/", {
     method: "POST",
     headers: {
       Accept: "application/json",
