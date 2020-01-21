@@ -2,7 +2,7 @@
 const express = require("express");
 const getGasStations = require("./modules/getGasStations.js");
 const getzipCode = require("./modules/getzipCode");
-// const port = process.env.PORT || 3030;
+const port = process.env.PORT || 3030;
 const bestMatches = require("./modules/bestMatches.js");
 const addCoordinates = require("./modules/addCoordinates.js");
 let app = express();
