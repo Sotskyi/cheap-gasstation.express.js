@@ -9,7 +9,10 @@ let app = express();
 app.listen(port, () => console.log("listening at 3000"));
 app.use(express.static("public"));
 app.use(express.json());
-app.post("/api", (request, response) => {
+app.get("/", (req, res) => {
+  res.sendFile('index.html')
+});
+app.post("api", (request, response) => {
   let coordinates = request.body;
 
   let zipcode = getzipCode(coordinates);
