@@ -38,7 +38,7 @@ async function main() {
     if (coordinates) {
       direction(map, longitude, latitude, coordinates);
       direction(map, longitude, latitude, coordinates);
-    } else return Error;
+    }
   };
 }
 
