@@ -2,16 +2,16 @@
 const express = require("express");
 const getGasStations = require("./modules/getGasStations.js");
 const getzipCode = require("./modules/getzipCode");
-
+const port =3030;
 const bestMatches = require("./modules/bestMatches.js");
 const addCoordinates = require("./modules/addCoordinates.js");
 let app = express();
-app.listen(process.env.PORT || 3000)
+app.listen(port)
 app.use(express.static("public"));
 app.use(express.json());
-app.get("/", (req, res) => {
-  res.sendFile('index.html')
-});
+// app.get("/", (req, res) => {
+//   res.sendFile('index.html')
+// });
 app.post("/", (request, response) => {
   let coordinates = request.body;
 
