@@ -30,7 +30,7 @@ async function main() {
 
   showGasStation(getSortingGasstations);
 
-  addMarkers(getSortingGasstations, latitude, longitude, map);
+  let yourMarker=addMarkers(getSortingGasstations, latitude, longitude, map);
 
   document.onclick = function(e) {
     let coordinates = [
@@ -39,7 +39,7 @@ async function main() {
     if (coordinates) {
       direction(map, longitude, latitude, coordinates);
       direction(map, longitude, latitude, coordinates);
-      startNavigation(map, longitude, latitude, coordinates);
+      startNavigation(map, longitude, latitude, coordinates,yourMarker);
     }
   };
  

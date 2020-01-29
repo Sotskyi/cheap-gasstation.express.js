@@ -1,19 +1,12 @@
-export default function startNavigation(map, longitude, latitude, coordinates){
+export default function startNavigation(map, longitude, latitude, coordinates,yourMarker){
 
 
- let element = document.createElement("div");
-  element.className = "start-driving";
   
 
- let marker= new mapboxgl.Marker(element, { anchor: "center" });
-    marker.setLngLat([longitude, latitude])
-    marker.addTo(map);
-
-
     function success(pos,element) {
-        
+      yourMarker.setLngLat([crd.latitude,crd.longitude]);
         var crd = pos.coords;
-        marker.setLngLat([crd.latitude,crd.longitude])
+       
       
         if (target.latitude === crd.latitude && target.longitude === crd.longitude) {
           console.log('Congratulations, you reached the target');

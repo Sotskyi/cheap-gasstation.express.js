@@ -26,7 +26,8 @@ export default function addMarkers(arr, latitude, longitude, map) {
   element.className = "marker";
   element.innerHTML = "<span class='your-marker' ><b>you</b></span>";
 
-  new mapboxgl.Marker(element, { anchor: "center" })
+  let yourMarker=new mapboxgl.Marker(element, { anchor: "center" })
     .setLngLat([longitude, latitude])
     .addTo(map);
+    return yourMarker;
 }
