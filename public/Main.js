@@ -2,6 +2,7 @@ import getClientPosition from "./static-modules/GetClientPostion.js";
 import showGasStation from "./static-modules/ShowGasStation.js";
 import addMarkers from "./static-modules/AddMarkers.js";
 import direction from "./static-modules/Direction.js";
+import startNavigation from"./static-modules/StartNavigation.js";
 
 async function main() {
   let position = await getClientPosition();
@@ -38,8 +39,10 @@ async function main() {
     if (coordinates) {
       direction(map, longitude, latitude, coordinates);
       direction(map, longitude, latitude, coordinates);
+      startNavigation(map, longitude, latitude, coordinates);
     }
   };
+ 
 }
 
 main();
