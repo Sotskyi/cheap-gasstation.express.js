@@ -31,6 +31,7 @@ async function main() {
   showGasStation(getSortingGasstations);
 
   let yourMarker=addMarkers(getSortingGasstations, latitude, longitude, map);
+  console.log(yourMarker);
 
   document.onclick = function(e) {
     let coordinates = [

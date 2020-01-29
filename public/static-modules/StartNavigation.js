@@ -2,11 +2,14 @@ export default function startNavigation(map, longitude, latitude, coordinates,yo
 
 
   
+    function success(pos) {
+     
+        let crd = pos.coords;
+        yourMarker.setLngLat([crd.longitude,crd.latitude])
+        console.log(crd.latitude);
+        
 
-    function success(pos,element) {
-      yourMarker.setLngLat([crd.latitude,crd.longitude]);
-        var crd = pos.coords;
-       
+
       
         if (target.latitude === crd.latitude && target.longitude === crd.longitude) {
           console.log('Congratulations, you reached the target');
@@ -15,6 +18,7 @@ export default function startNavigation(map, longitude, latitude, coordinates,yo
       }
       
       function error(err) {
+       
         console.warn('ERROR(' + err.code + '): ' + err.message);
       }
       
