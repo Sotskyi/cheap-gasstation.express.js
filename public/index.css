@@ -22,7 +22,7 @@
   position: absolute;
   /* bottom: 15px; */
   left: 78px;
-  top: 38px;
+  top: 25px;
 }
 .marker {
   width: 0;
@@ -121,17 +121,19 @@
 }
 .price-button {
   position: absolute;
-  top: -5px;
+  top: -10px;
   left: 39px;
 }
 @media (max-width: 640px) {
   .flex-item-button {
     height: 85px;
+    font-size: 14px;
   }
   .describe-content {
     position: absolute;
     bottom: 15px;
     left: 38px;
+    font-size: 14px;
   }
   .flex-container {
     width: 30%;
