@@ -34,6 +34,7 @@ async function main() {
   console.log(yourMarker);
 
   document.onclick = function(e) {
+     if (e.target.tagName!=="CANVAS"){
     let coordinates = [
       e.target.closest("[coordinates]").getAttribute("coordinates")
     ];
@@ -42,6 +43,7 @@ async function main() {
       direction(map, longitude, latitude, coordinates);
       startNavigation(map, longitude, latitude, coordinates,yourMarker);
     }
+  }
   };
  
 }
