@@ -1,106 +1,85 @@
-
-@media (max-width: 640px) {
-  .flex-item{
-
-    height: 85px!important;
-
-
-    
-  }
-  .describe-content{
-    position: absolute;
-    bottom: 15px;
-    left: 38px!important;
-  }
-
-
-
-}
-
 #map {
   height: 100%;
-  width: 70%;
+  width: 80%;
   position: absolute;
   top: 0;
   left: 0;
-  
-
 }
-.flex-container{
+.flex-container {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 30%;
+  width: 20%;
   position: absolute;
   top: 0;
   right: 0;
+  background-color: #f3f6f6;
 }
-.flex-item{
- position: relative;
-  margin: 3px;
- 
-  height: 60px;
-  background-color: #d7d0e6;
-
+.flex-item-button {
+  background-color: #30e3ca;
 }
-.describe-content{
+.describe-content {
   position: absolute;
-  bottom: 15px;
+  /* bottom: 15px; */
   left: 78px;
+  top: 38px;
 }
-.marker {width:0; height:0;}
+.marker {
+  width: 0;
+  height: 0;
+}
 
 .gas {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  box-sizing:border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
   width: 30px;
   height: 30px;
-  color:#fff;
-  background: red;
-  border:solid 2px;
+  color: #fff;
+  background: #11999e;
+  border: solid 2px;
   border-radius: 0 70% 70%;
-  box-shadow:0 0 2px #000;
+  box-shadow: 0 0 2px #000;
   cursor: pointer;
-  transform-origin:0 0;
+  transform-origin: 0 0;
   transform: rotateZ(-135deg);
 }
 .your-marker {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  box-sizing:border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
   width: 30px;
   height: 30px;
-  color:#fff;
-  background: rgb(84, 20, 202);
-  border:solid 2px;
+  color: #fff;
+  background: #40514e;
+  border: solid 2px;
   border-radius: 0 70% 70%;
-  box-shadow:0 0 2px #000;
+  box-shadow: 0 0 2px #000;
   cursor: pointer;
-  transform-origin:0 0;
+  transform-origin: 0 0;
   transform: rotateZ(-135deg);
 }
 .numberCircle {
   border-radius: 50%;
-  color:#fff;
+  color: #fff;
   width: 2vh;
   height: 2vh;
   padding: 8px;
-  border:solid 2px;
+  border: solid 2px;
   background: #fff;
-  box-shadow:0 0 2px #000;
- 
+  box-shadow: 0 0 2px #000;
   position: absolute;
   top: 4px;
   left: 1px;
-  background-color:red;
+  background-color: #11999e;
   text-align: center;
-
   font: bold Arial, sans-serif;
 }
-.marker b {transform: rotateZ(135deg)}
+.marker b {
+  transform: rotateZ(135deg);
+}
 
 .mapboxgl-popup {
   max-width: 200px;
@@ -108,12 +87,56 @@
 
 .mapboxgl-popup-content {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
-.belowMarker{
+.belowMarker {
   top: -1px;
   left: -11px;
   position: absolute;
   font-weight: bold;
   font-size: 15px;
+}
+.flex-item-button {
+  position: relative;
+  margin: 3px;
+  height: 77px;
+
+  background-color: #30e3cb;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #40514e;
+  font-family: Arial;
+  font-size: 14px;
+  padding: 15px 31px;
+  text-decoration: none;
+}
+
+.flex-item-button:hover {
+  background-color: #8ef5e6;
+}
+.flex-item-button:active {
+  position: relative;
+  top: 1px;
+}
+.price-button {
+  position: absolute;
+  top: -5px;
+  left: 39px;
+}
+@media (max-width: 640px) {
+  .flex-item-button {
+    height: 85px;
+  }
+  .describe-content {
+    position: absolute;
+    bottom: 15px;
+    left: 38px;
+  }
+  .flex-container {
+    width: 30%;
+  }
+  .map {
+    width: 70%;
+  }
 }

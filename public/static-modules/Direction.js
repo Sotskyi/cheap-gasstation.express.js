@@ -48,7 +48,7 @@ export default async function direction(map, longitude, latitude, coordinates) {
         "line-cap": "round"
       },
       paint: {
-        "line-color": "#0B1EEA",
+        "line-color": "#1a3263",
         "line-width": 5,
         "line-opacity": 0.75
       }
