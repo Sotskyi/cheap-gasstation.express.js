@@ -8,6 +8,7 @@ async function main() {
   let position = await getClientPosition();
   let longitude = position.coords.longitude;
   let latitude = position.coords.latitude;
+  
 
   mapboxgl.accessToken =
     "pk.eyJ1IjoiYW5kcmV3NzEyNDEiLCJhIjoiY2s1Njd1czJyMDBkbDNucGY2amN4d3dpYyJ9.yWyF1bOBV2MLUUNlg-esvw";
@@ -31,17 +32,21 @@ async function main() {
   showGasStation(getSortingGasstations);
 
   let yourMarker=addMarkers(getSortingGasstations, latitude, longitude, map);
-  console.log(yourMarker);
+ 
 
   document.onclick = function(e) {
-     if (e.target.tagName!=="CANVAS"){
+   
+     if (e.target.tagName!=="CANVAS"&&e.target.tagName!=="DIV"){
     let coordinates = [
       e.target.closest("[coordinates]").getAttribute("coordinates")
     ];
     if (coordinates) {
       direction(map, longitude, latitude, coordinates);
-      direction(map, longitude, latitude, coordinates);
-      startNavigation(map, longitude, latitude, coordinates,yourMarker);
+      // direction(map, longitude, latitude, coordinates);
+      
+     startNavigation(map, coordinates,yourMarker);
+     
+    //  setTimeout(direction,3000,map, longitude, latitude, liveCoords)
     }
   }
   };

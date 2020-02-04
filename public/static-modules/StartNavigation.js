@@ -1,12 +1,21 @@
-export default function startNavigation(map, longitude, latitude, coordinates,yourMarker){
+
+import direction from "./Direction.js";
+
+export default function startNavigation(map, coordinates,yourMarker){
 
 
-  
-    function success(pos) {
+
+     function success(pos) {
      
         let crd = pos.coords;
+        let longitude=crd.longitude;
+        let latitude=crd.latitude;
+
+
+
+        // setInterval(direction,5000,map,longitude,latitude,coordinates)
         yourMarker.setLngLat([crd.longitude,crd.latitude])
-        console.log(crd.latitude);
+        
         
 
 
@@ -15,6 +24,7 @@ export default function startNavigation(map, longitude, latitude, coordinates,yo
           console.log('Congratulations, you reached the target');
           navigator.geolocation.clearWatch(id);
         }
+       
       }
       
       function error(err) {
@@ -35,7 +45,7 @@ export default function startNavigation(map, longitude, latitude, coordinates,yo
       
      let  id = navigator.geolocation.watchPosition(success, error, options);
 
-
+     
 
 
 

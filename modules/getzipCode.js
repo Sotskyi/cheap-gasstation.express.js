@@ -19,13 +19,18 @@ module.exports = function getZipcode(coordinates){
         (err, _res, body) => {
             let jsonBody = JSON.parse(body);
             
+           
             
-            let zip=jsonBody.features[0].context[1].text;
+            var isnum = /^\d+$/.test(jsonBody.features[0].context[0].text);
+            
+            let zip=isnum?jsonBody.features[0].context[0].text:jsonBody.features[0].context[1].text;
+            
             
           if (err) {
             console.error("Request error", err.message);
             reject(err);
           }
+          ;
           resolve(zip)
         })
         

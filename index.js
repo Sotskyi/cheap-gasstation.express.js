@@ -18,10 +18,12 @@ app.post("/", (request, response) => {
   let zipcode = getzipCode(coordinates);
   return zipcode
     .then(yourZipCode => {
+      
       return getGasStations(yourZipCode, 11);
     })
 
     .then(allGasstations => {
+     
       let bestMatchesIn3Miles = bestMatches(allGasstations, 3);
 
       return addCoordinates(bestMatchesIn3Miles);

@@ -1,5 +1,5 @@
 export default function addMarkers(arr, latitude, longitude, map) {
-  console.log(arr);
+ 
 
   arr["bestIn3Miles"].forEach((elem, index) => {
     let el = document.createElement("div");

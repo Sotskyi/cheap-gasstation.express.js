@@ -24,6 +24,7 @@ export default async function direction(map, longitude, latitude, coordinates) {
       coordinates: route
     }
   };
+ 
   // if the route already exists on the map, reset it using setData
   if (map.getSource("route")) {
     map.getSource("route").setData(geojson);
@@ -39,7 +40,7 @@ export default async function direction(map, longitude, latitude, coordinates) {
           properties: {},
           geometry: {
             type: "LineString",
-            coordinates: geojson
+            coordinates: route
           }
         }
       },

@@ -15,7 +15,12 @@ module.exports = function bestMatches(allgasstations, miles) {
   let getSortingGasstations = flatInOneArray.filter(
     item => item.distanceVal < miles
   );
-
+  getSortingGasstations=(getSortingGasstations.length<5)?flatInOneArray.filter(
+    item => item.distanceVal < 5
+  ): getSortingGasstations;   //<----- check ststions in 3 miles if not in 5 miles
+  
+  
+  
   getSortingGasstations.sort(function(a, b) {
     return a.price - b.price || a.distanceVal - b.distanceVal;
   });

@@ -62,6 +62,7 @@ module.exports = function getGasStations(zipCode, numberOfPages) {
 
   let promises = urls.map(url => parse(url));
   return Promise.all(promises).then(responses => {
+   
     return responses;
   });
 
