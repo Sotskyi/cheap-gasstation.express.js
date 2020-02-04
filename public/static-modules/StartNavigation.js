@@ -1,16 +1,58 @@
 
 import direction from "./Direction.js";
 
-export default function startNavigation(map, coordinates,yourMarker){
+export default function startNavigation(longitude,latitude,map, coordinates,yourMarker){
+let livelongitude;
+let livelatitude;
+
+if(livelatitude&&livelongitude){direction(map, livelatitude, livelongitude, coordinates)}
+direction(map, longitude, latitude, coordinates)
 
 
 
-     function success(pos) {
-     
+  function success(pos) {
+
+
         let crd = pos.coords;
-        let longitude=crd.longitude;
-        let latitude=crd.latitude;
-        map.setCenter([longitude,latitude]);
+      livelongitude=crd.longitude;
+       livelatitude=crd.latitude;
+
+
+
+        
+      function throttle(func, ms,args) {
+
+        let isThrottled = false,
+          savedArgs,
+          savedThis;
+      
+        function wrapper() {
+      
+          if (isThrottled) { // (2)
+            savedArgs = arguments;
+            savedThis = this;
+            return;
+          }
+      
+          func.apply(this, args); // (1)
+      
+          isThrottled = true;
+      
+          setTimeout(function() {
+            isThrottled = false; // (3)
+            if (savedArgs) {
+              wrapper.apply(savedThis, savedArgs);
+              savedArgs = savedThis = null;
+            }
+          }, ms);
+        }
+      
+        return wrapper;
+      }
+      throttle( direction(map, livelongitude, livelatitude, coordinates),5000)
+
+
+        map.setCenter([livelongitude,livelatitude]);
         map.setZoom(13);
 
 
@@ -25,9 +67,10 @@ export default function startNavigation(map, coordinates,yourMarker){
           console.log('Congratulations, you reached the target');
           navigator.geolocation.clearWatch(id);
         }
-       
-      }
       
+      }
+     
+    
       function error(err) {
        
         console.warn('ERROR(' + err.code + '): ' + err.message);
@@ -43,7 +86,7 @@ export default function startNavigation(map, coordinates,yourMarker){
         timeout: 5000,
         maximumAge: 0
       };
-      
+      console.log(livelatitude,livelongitude);
      let  id = navigator.geolocation.watchPosition(success, error, options);
 
      

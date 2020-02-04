@@ -41,10 +41,10 @@ async function main() {
       e.target.closest("[coordinates]").getAttribute("coordinates")
     ];
     if (coordinates) {
-      direction(map, longitude, latitude, coordinates);
-      // direction(map, longitude, latitude, coordinates);
       
-     startNavigation(map, coordinates,yourMarker);
+      
+      
+     startNavigation(longitude,latitude,map, coordinates,yourMarker);
      
     //  setTimeout(direction,3000,map, longitude, latitude, liveCoords)
     }
