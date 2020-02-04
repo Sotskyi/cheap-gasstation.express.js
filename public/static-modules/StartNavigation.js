@@ -10,7 +10,8 @@ export default function startNavigation(map, coordinates,yourMarker){
         let crd = pos.coords;
         let longitude=crd.longitude;
         let latitude=crd.latitude;
-
+        map.setCenter([longitude,latitude]);
+        map.setZoom(13);
 
 
         // setInterval(direction,5000,map,longitude,latitude,coordinates)
