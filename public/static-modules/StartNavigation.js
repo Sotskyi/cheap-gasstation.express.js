@@ -1,16 +1,15 @@
-import direction from "./Direction.js";
 
-export default function startNavigation(
-  longitude,
-  latitude,
-  map,
-  coordinates,
-  yourMarker
-) {
+
+export default function startNavigation(updateLongitude,  updateLatitude, map, coordinates, yourMarker) {
+
+
+  map.setCenter([updateLongitude, updateLatitude]);
+  map.setZoom(13);
+
   function success(pos) {
     let crd = pos.coords;
-    let livelongitude = crd.longitude;
-    let livelatitude = crd.latitude;
+    // let livelongitude = crd.longitude;
+    // let livelatitude = crd.latitude;
 
     // function throttle(func, ms,args) {
 
@@ -43,9 +42,7 @@ export default function startNavigation(
     // }
     // throttle( direction(map, livelongitude, livelatitude, coordinates),20000)
 
-    map.setCenter([livelongitude, livelatitude]);
-    map.setZoom(13);
-
+   
     yourMarker.setLngLat([crd.longitude, crd.latitude]);
 
     if (
@@ -68,7 +65,7 @@ export default function startNavigation(
 
   let options = {
     enableHighAccuracy: false,
-    timeout: 5000,
+    timeout: 0,
     maximumAge: 0
   };
 

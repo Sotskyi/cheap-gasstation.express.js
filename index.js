@@ -1,12 +1,11 @@
-
 const express = require("express");
 const getGasStations = require("./modules/getGasStations.js");
 const getzipCode = require("./modules/getzipCode");
-const port =3030;
+const port = 3030;
 const bestMatches = require("./modules/bestMatches.js");
 const addCoordinates = require("./modules/addCoordinates.js");
 let app = express();
-app.listen(port)
+app.listen(port);
 app.use(express.static("public"));
 app.use(express.json());
 // app.get("/", (req, res) => {
@@ -18,12 +17,10 @@ app.post("/", (request, response) => {
   let zipcode = getzipCode(coordinates);
   return zipcode
     .then(yourZipCode => {
-      
       return getGasStations(yourZipCode, 11);
     })
 
     .then(allGasstations => {
-     
       let bestMatchesIn3Miles = bestMatches(allGasstations, 3);
 
       return addCoordinates(bestMatchesIn3Miles);
@@ -34,5 +31,4 @@ app.post("/", (request, response) => {
 
       response.json({ bestIn3Miles: sameOrderAfterPromises });
     });
-    
 });
