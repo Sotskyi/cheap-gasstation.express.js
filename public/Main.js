@@ -34,7 +34,7 @@ async function main() {
   let yourMarker=addMarkers(getSortingGasstations, latitude, longitude, map);
  
 
-  document.onclick = function(e) {
+  document.onclick = async function(e) {
    
      if (e.target.tagName!=="CANVAS"&&e.target.tagName!=="DIV"){
     let coordinates = [
@@ -42,11 +42,14 @@ async function main() {
     ];
     if (coordinates) {
       
-      
+      let updatePosition = await getClientPosition();
+      let updateLongitude=updatePosition.coords.longitude;
+      let updateLatitude=updatePosition.coords.latitude;
+      direction(map, updateLongitude, updateLatitude, coordinates)
       
      startNavigation(longitude,latitude,map, coordinates,yourMarker);
      
-    //  setTimeout(direction,3000,map, longitude, latitude, liveCoords)
+    
     }
   }
   };

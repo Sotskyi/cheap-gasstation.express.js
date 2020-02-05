@@ -1,6 +1,6 @@
 export default function getClientPosition() {
     let options = {
-      timeout: 30000,
+      // timeout: 30000,
       enableHighAccuracy: true,
       maximumAge: 75000
     };
