@@ -34,7 +34,7 @@ async function main() {
 
   document.onclick = async function(e) {
     
-    if (e.target.tagName !== "CANVAS" ) {
+    if (e.target.tagName !== "CANVAS"&&e.target.tagName !== "DIV" ) {
       let coordinates = [
         e.target.closest("[coordinates]").getAttribute("coordinates")
       ];

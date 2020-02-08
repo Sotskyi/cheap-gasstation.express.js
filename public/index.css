@@ -65,7 +65,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 8%;
+  width: 9%;
 }
 
 .gasstation-logo{
@@ -90,7 +90,7 @@
   box-sizing: border-box;
   width: 25px;
   height: 25px;
-  color:#7c73e6;
+  color:#ffe9e3;
   background: #c4c1e0;
   border: solid 2px;
   border-radius: 0 70% 70%;
@@ -157,5 +157,11 @@
  }
  .wrapper-logo{
    width: 20%;
+ }
+ .flex-container{
+   width: 20%;
+ }
+ .map{
+   width: 80%;
  }
 }
