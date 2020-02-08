@@ -5,7 +5,7 @@ export default function addMarkers(arr, latitude, longitude, map) {
     let el = document.createElement("div");
     el.className = "marker";
     el.innerHTML =
-      "<span  class='gas' coordinates=" +
+      "<span  class='gas-marker' coordinates=" +
       elem.coordinates +
       "><b>" +
       (index + 1) +
@@ -13,7 +13,7 @@ export default function addMarkers(arr, latitude, longitude, map) {
       elem.price +
       "</div>";
 
-    new mapboxgl.Marker(el)
+   let marker= new mapboxgl.Marker(el)
       .setLngLat(elem.coordinates)
       // .setPopup(
       //   new mapboxgl.Popup({ offset: 25 }) // add popups

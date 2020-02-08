@@ -24,9 +24,9 @@ module.exports = function bestMatches(allgasstations, miles) {
   getSortingGasstations.sort(function(a, b) {
     return a.price - b.price || a.distanceVal - b.distanceVal;
   });
-  let nineOfBest= getSortingGasstations.filter((elem,index)=>{ if(index<9){
+  let tenOfBest= getSortingGasstations.filter((elem,index)=>{ if(index<10){
     return elem
   }});
   
-  return nineOfBest;
+  return tenOfBest;
 };

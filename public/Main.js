@@ -1,5 +1,5 @@
 import getClientPosition from "./static-modules/GetClientPostion.js";
-import showGasStation from "./static-modules/ShowGasStation.js";
+import showGasStationButtons from "./static-modules/ShowGasStationButtons.js";
 import addMarkers from "./static-modules/AddMarkers.js";
 import direction from "./static-modules/Direction.js";
 import startNavigation from "./static-modules/StartNavigation.js";
@@ -28,12 +28,13 @@ async function main() {
   });
   let getSortingGasstations = await sendLocation.json();
 
-  showGasStation(getSortingGasstations);
+  showGasStationButtons(getSortingGasstations);
 
   let yourMarker = addMarkers(getSortingGasstations, latitude, longitude, map);
 
   document.onclick = async function(e) {
-    if (e.target.tagName !== "CANVAS" && e.target.tagName !== "DIV") {
+    
+    if (e.target.tagName !== "CANVAS" ) {
       let coordinates = [
         e.target.closest("[coordinates]").getAttribute("coordinates")
       ];
