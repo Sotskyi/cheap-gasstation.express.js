@@ -26,7 +26,7 @@ export default function showGasStationButtons(arr) {
     
    </div>
     <div class="wrapper-logo">
-    <img  style ="width:100%" class="gasstation-logo"src="./gasstations/${logoName}.jpg" onerror="this.src='./gasstations/alternative.jpg'" > 
+    <img   class="gasstation-logo"src="./gasstations/${logoName}.jpg" onerror="this.src='./gasstations/alternative.jpg'" > 
     </div>
     
     </a>` ;
