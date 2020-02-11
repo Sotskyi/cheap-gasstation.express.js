@@ -21,13 +21,14 @@ export default function showGasStationButtons(arr) {
     } ><div class="number-wrapper">
      <span class="gasstation-number">${index + 1}</div></span>
       <div class="wrapper-describe-content">
+      <div class="wrapper-logo">
+    <img   class="gasstation-logo"src="./gasstations/${logoName}.jpg" onerror="this.src='./gasstations/alternative.jpg'" > 
+    </div>
       <span class="gasstation-name">${resultName}</span> 
     <span class="gasstation-price">${element.price}$</span>
     
    </div>
-    <div class="wrapper-logo">
-    <img   class="gasstation-logo"src="./gasstations/${logoName}.jpg" onerror="this.src='./gasstations/alternative.jpg'" > 
-    </div>
+    
     
     </a>` ;
   });

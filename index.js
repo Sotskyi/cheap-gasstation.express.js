@@ -15,8 +15,11 @@ app.post("/", (request, response) => {
   let coordinates = request.body;
 
   let zipcode = getzipCode(coordinates);
+
   return zipcode
+ 
     .then(yourZipCode => {
+     console.log(yourZipCode) ;
       return getGasStations(yourZipCode, 11);
     })
 

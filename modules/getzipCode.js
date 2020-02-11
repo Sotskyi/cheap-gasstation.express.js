@@ -1,13 +1,14 @@
 const request = require("request");
 module.exports = function getZipcode(coordinates){
+  
 
-    // let latitude=coordinates.latitude;
-    // let longitude=coordinates.longitude;
+
+  
     
     return new Promise(function(resolve, reject) {
     
-        
-    let url=`https://api.mapbox.com/geocoding/v5/mapbox.places/${coordinates.longitude},${coordinates.latitude}.json?limit=1&access_token=pk.eyJ1IjoiYW5kcmV3NzEyNDEiLCJhIjoiY2s1Njd1czJyMDBkbDNucGY2amN4d3dpYyJ9.yWyF1bOBV2MLUUNlg-esvw`
+      let mapquestKey='MwUc8UMGt7AzPdXY3vJmAKxacWFsT1Cr';
+    let url=`http://open.mapquestapi.com/geocoding/v1/reverse?key=${mapquestKey}&location=${coordinates.latitude},${coordinates.longitude}`
 
 
     request.get(
@@ -20,17 +21,16 @@ module.exports = function getZipcode(coordinates){
             let jsonBody = JSON.parse(body);
             
            
-            
-            var isnum = /^\d+$/.test(jsonBody.features[0].context[0].text);
-            
-            let zip=isnum?jsonBody.features[0].context[0].text:jsonBody.features[0].context[1].text;
+           let zip=jsonBody.results[0].locations[0].postalCode;
+           
+           
             
             
           if (err) {
             console.error("Request error", err.message);
             reject(err);
           }
-          ;
+          
           resolve(zip)
         })
         
