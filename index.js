@@ -19,7 +19,7 @@ app.post("/", (request, response) => {
   return zipcode
  
     .then(yourZipCode => {
-     console.log(yourZipCode) ;
+     
       return getGasStations(yourZipCode, 11);
     })
 

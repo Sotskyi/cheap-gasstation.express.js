@@ -24,9 +24,10 @@ export default function showGasStationButtons(arr) {
       <div class="wrapper-logo">
     <img   class="gasstation-logo"src="./gasstations/${logoName}.jpg" onerror="this.src='./gasstations/alternative.jpg'" > 
     </div>
+    <div class="wrapper-name-price">
       <span class="gasstation-name">${resultName}</span> 
     <span class="gasstation-price">${element.price}$</span>
-    
+    </div>
    </div>
     
     
