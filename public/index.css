@@ -65,10 +65,11 @@
  
   font-family:initial;
   font-size: 73%;
+  font-weight: bolder;
 }
 .gasstation-name{
   font-family:initial;
-  font-size: 80%;
+  font-size:75%;
   text-align: center;
 }
 .wrapper-logo{
