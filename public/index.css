@@ -63,11 +63,11 @@
 .gasstation-price {
  
   font-family:initial;
-  font-size: 90%;
+  font-size: 73%;
 }
 .gasstation-name{
   font-family:initial;
-  font-size: 90%;
+  font-size: 80%;
   text-align: center;
 }
 .wrapper-logo{
@@ -162,9 +162,7 @@
 
 @media (max-width: 640px) {
 
- .wrapper-name-price{
-  font-size: 100%;
- }
+ 
  .wrapper-logo{
    max-width: 25%;;
  }
