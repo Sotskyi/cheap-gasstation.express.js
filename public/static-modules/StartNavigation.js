@@ -3,8 +3,8 @@
 export default function startNavigation(updateLongitude,  updateLatitude, map, coordinates, yourMarker) {
 
 
-  map.setCenter([updateLongitude, updateLatitude]);
-  map.setZoom(12);
+  // map.setCenter([updateLongitude, updateLatitude]);
+  map.setZoom(11);
 
   function success(pos) {
     let crd = pos.coords;
