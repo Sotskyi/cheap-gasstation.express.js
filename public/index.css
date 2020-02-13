@@ -13,7 +13,7 @@
   position: absolute;
   align-items: center;
  
-  top: 70%;
+  top: 81%;
   color: #7c73e6;
   width: 90%;
  height: 20%;
@@ -35,7 +35,7 @@
 .goolge-map-button {
 	background-color:#7c73e6;
 	border-radius:28px;
-  color:#ffe9e3;
+  color:white;
 	display:inline-block;
   cursor:pointer;
   
@@ -44,7 +44,7 @@
 	font-size:13px;
 	padding: 10px;
 	text-decoration:none;
-
+  box-shadow: -1px -1px 17px 0px #0004A5;
 }
 
 
@@ -113,7 +113,7 @@
 }
 .gasstation-name{
   font-family:initial;
-  font-size:75%;
+  font-size: 62%;
   text-align: center;
 }
 .wrapper-logo{
@@ -125,8 +125,7 @@
 }
 
 .gasstation-logo{
-  width:100%
-
+  width: 85%;
 }
 
 
