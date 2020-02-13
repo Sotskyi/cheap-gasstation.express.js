@@ -28,7 +28,7 @@ export default function showGasStationButtons(arr) {
     </div>
     <div class="wrapper-name-price">
       <span class="gasstation-name">${resultName}</span> 
-    <span class="gasstation-price">${element.price}$</span>
+    <span class="gasstation-price">$${element.price}</span>
     </div>
    </div>
     
