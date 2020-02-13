@@ -4,7 +4,7 @@ export default function startNavigation(updateLongitude,  updateLatitude, map, c
 
 
   map.setCenter([updateLongitude, updateLatitude]);
-  map.setZoom(13);
+  map.setZoom(12);
 
   function success(pos) {
     let crd = pos.coords;
