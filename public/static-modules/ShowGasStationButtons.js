@@ -14,15 +14,17 @@ export default function showGasStationButtons(arr) {
    
       
     let logoName=GenerateLogoName(resultName);
+    
+    let linc=logoName?`./stations/${logoName}.jpg`:`./stations/alternative.jpg`;
+    
    
-
     innerhtml += `<a href="#" class="flex-item-button" coordinates=${
       element.coordinates
     } ><div class="number-wrapper">
      <span class="gasstation-number">${index + 1}</div></span>
       <div class="wrapper-describe-content">
       <div class="wrapper-logo">
-    <img   class="gasstation-logo"src="./gasstations/${logoName}.jpg" onerror="this.src='./gasstations/alternative.jpg'" > 
+    <img   class="gasstation-logo"src="${linc}" " > 
     </div>
     <div class="wrapper-name-price">
       <span class="gasstation-name">${resultName}</span> 

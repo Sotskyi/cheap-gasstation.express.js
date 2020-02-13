@@ -5,6 +5,50 @@
   top: 0;
   left: 0;
 }
+.navigation-wrapper{
+  opacity: 0;;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  align-items: center;
+ 
+  top: 70%;
+  color: #7c73e6;
+  width: 90%;
+ height: 20%;
+ font-family: initial;
+}
+.duration-distance-wrapper{
+
+}
+.navigation-duration{
+  
+  background-color: #ffe9e3;
+  border-radius: 6px;
+}
+.navigation-distance{
+  background-color: #ffe9e3;
+  border-radius: 6px;
+}
+
+.goolge-map-button {
+	background-color:#7c73e6;
+	border-radius:28px;
+  color:#ffe9e3;
+	display:inline-block;
+  cursor:pointer;
+  
+	justify-content: space-around;
+	font-family:Arial;
+	font-size:13px;
+	padding: 10px;
+	text-decoration:none;
+
+}
+
+
+
 .flex-container {
   display: flex;
   flex-direction: column;
@@ -173,5 +217,9 @@
  }
  .map{
    width: 80%;
+ }
+ .navigation-wrapper{
+   width: 80%;
+
  }
 }

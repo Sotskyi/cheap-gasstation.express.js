@@ -12,6 +12,11 @@ export default async function direction(map, longitude, latitude, coordinates) {
   let response = await fetch(url);
   let responseJson = await response.json();
 
+  let distance = ((responseJson.routes[0].distance / 1000) * 0.62137).toFixed(
+    1
+  );
+  let duration = Math.round(responseJson.routes[0].duration / 60);
+  let obj = { duration: duration, distance: distance };
   let data = responseJson.routes[0];
 
   let route = data.geometry.coordinates;
@@ -55,4 +60,5 @@ export default async function direction(map, longitude, latitude, coordinates) {
       }
     });
   }
+  return obj;
 }

@@ -3,7 +3,7 @@ import showGasStationButtons from "./static-modules/ShowGasStationButtons.js";
 import addMarkers from "./static-modules/AddMarkers.js";
 import direction from "./static-modules/Direction.js";
 import startNavigation from "./static-modules/StartNavigation.js";
-
+import showGoogleButton from"./static-modules/ShowGoogleButton.js";
 async function main() {
   let position = await getClientPosition();
   let longitude = position.coords.longitude;
@@ -42,9 +42,12 @@ async function main() {
         let updatePosition = await getClientPosition();
         let updateLongitude = updatePosition.coords.longitude;
         let updateLatitude = updatePosition.coords.latitude;
-        direction(map, updateLongitude, updateLatitude, coordinates);
+        let distanceAndDuration= await direction(map, updateLongitude, updateLatitude, coordinates);
+        showGoogleButton(distanceAndDuration,updateLongitude, updateLatitude, coordinates);
+
 
         startNavigation(updateLongitude,  updateLatitude, map, coordinates, yourMarker);
+        
       }
     }
   }
