@@ -24,7 +24,7 @@ export default function showGasStationButtons(arr) {
      <span class="gasstation-number">${index + 1}</div></span>
       <div class="wrapper-describe-content">
       <div class="wrapper-logo">
-    <img   class="gasstation-logo"src="${linc}" " > 
+    <img   class="gasstation-logo"src="${linc}"  onerror="this.src='./stations/alternative.jpg'" " > 
     </div>
     <div class="wrapper-name-price">
       <span class="gasstation-name">${resultName}</span> 

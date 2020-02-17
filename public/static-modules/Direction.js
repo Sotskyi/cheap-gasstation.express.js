@@ -1,4 +1,10 @@
-export default async function direction(map, longitude, latitude, coordinates) {
+export default async function direction(
+  map,
+  longitude,
+  latitude,
+  coordinates,
+  mapboxKey
+) {
   let url =
     "https://api.mapbox.com/directions/v5/mapbox/driving/" +
     longitude +
@@ -8,7 +14,8 @@ export default async function direction(map, longitude, latitude, coordinates) {
     coordinates[0] +
     "," +
     coordinates[1] +
-    "?&geometries=geojson&access_token=pk.eyJ1IjoiYW5kcmV3NzEyNDEiLCJhIjoiY2s1Njd1czJyMDBkbDNucGY2amN4d3dpYyJ9.yWyF1bOBV2MLUUNlg-esvw";
+    "?&geometries=geojson&access_token=" +
+    mapboxKey;
   let response = await fetch(url);
   let responseJson = await response.json();
 

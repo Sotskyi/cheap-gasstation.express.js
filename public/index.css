@@ -1,3 +1,7 @@
+
+body{
+  font-family: 'Changa', sans-serif;
+}
 #map {
   height: 100%;
   width: 90%;
@@ -17,7 +21,7 @@
   color: #7c73e6;
   width: 90%;
  height: 17%;
- font-family: initial;
+ 
 }
 .duration-distance-wrapper{
 
@@ -40,7 +44,7 @@
   cursor:pointer;
   
 	justify-content: space-around;
-	font-family:Arial;
+
 	font-size:13px;
 	padding: 10px;
 	text-decoration:none;
@@ -82,7 +86,7 @@
 }
 .gasstation-number {
   margin-left: 1px;
-  font-family:initial;
+  
   font-size: 12px;
 
 }
@@ -92,7 +96,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
- 
+  line-height: 1.3;
   
   
 }
@@ -107,12 +111,12 @@
 }
 .gasstation-price {
  
-  font-family:initial;
+  
   font-size: 73%;
   font-weight: bolder;
 }
 .gasstation-name{
-  font-family:initial;
+  
   font-size: 62%;
   text-align: center;
 }
@@ -131,7 +135,7 @@
 
 .marker b {
   transform: rotateZ(135deg);
-  font-family:initial;
+  font-size: smaller;
 }
 .marker {
   width: 0;

@@ -1,11 +1,12 @@
 const request = require("request");
 
 module.exports = function addCoordinates(arr) {
-  let allcoordinates=[];
+  let MAPBOX_TOKEN=process.env.MAPBOX_TOKEN;
+  
   let urls = Array.from(
    arr,
     (x, i) =>
-      "https://api.mapbox.com/geocoding/v5/mapbox.places/"+x.addresStreet+".json?limit=1&access_token=pk.eyJ1IjoiYW5kcmV3NzEyNDEiLCJhIjoiY2s1Njd1czJyMDBkbDNucGY2amN4d3dpYyJ9.yWyF1bOBV2MLUUNlg-esvw"
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/${x.addresStreet}.json?limit=1&access_token=${MAPBOX_TOKEN}`
   );
 
 

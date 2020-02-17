@@ -3,14 +3,18 @@ import showGasStationButtons from "./static-modules/ShowGasStationButtons.js";
 import addMarkers from "./static-modules/AddMarkers.js";
 import direction from "./static-modules/Direction.js";
 import startNavigation from "./static-modules/StartNavigation.js";
-import showGoogleButton from"./static-modules/ShowGoogleButton.js";
+import showGoogleButton from "./static-modules/ShowGoogleButton.js";
+
 async function main() {
+  let response = await fetch("/api/");
+  let responseJson = await response.json();
+  let mapboxKey = responseJson.MAPBOX_TOKEN;
+
   let position = await getClientPosition();
   let longitude = position.coords.longitude;
   let latitude = position.coords.latitude;
 
-  mapboxgl.accessToken =
-    "pk.eyJ1IjoiYW5kcmV3NzEyNDEiLCJhIjoiY2s1Njd1czJyMDBkbDNucGY2amN4d3dpYyJ9.yWyF1bOBV2MLUUNlg-esvw";
+  mapboxgl.accessToken = mapboxKey;
   var map = new mapboxgl.Map({
     container: "map",
     style: "mapbox://styles/mapbox/streets-v11",
@@ -18,7 +22,7 @@ async function main() {
     zoom: 13
   }); //<---- start render map
 
-  let sendLocation = await fetch("/", {
+  let sendLocation = await fetch("/api/", {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -33,8 +37,11 @@ async function main() {
   let yourMarker = addMarkers(getSortingGasstations, latitude, longitude, map);
 
   document.onclick = async function(e) {
-    
-    if (e.target.tagName !== "CANVAS"&&e.target.tagName !== "DIV"&&e.target.tagName!=="A" ) {
+    if (
+      e.target.tagName !== "CANVAS" &&
+      e.target.tagName !== "DIV" &&
+      e.target.tagName !== "A"
+    ) {
       let coordinates = [
         e.target.closest("[coordinates]").getAttribute("coordinates")
       ];
@@ -42,15 +49,30 @@ async function main() {
         let updatePosition = await getClientPosition();
         let updateLongitude = updatePosition.coords.longitude;
         let updateLatitude = updatePosition.coords.latitude;
-        let distanceAndDuration= await direction(map, updateLongitude, updateLatitude, coordinates);
-        showGoogleButton(distanceAndDuration,updateLongitude, updateLatitude, coordinates);
+        let distanceAndDuration = await direction(
+          map,
+          updateLongitude,
+          updateLatitude,
+          coordinates,
+          mapboxKey
+        );
+        showGoogleButton(
+          distanceAndDuration,
+          updateLongitude,
+          updateLatitude,
+          coordinates
+        );
 
-
-        startNavigation(updateLongitude,  updateLatitude, map, coordinates, yourMarker);
-        
+        startNavigation(
+          updateLongitude,
+          updateLatitude,
+          map,
+          coordinates,
+          yourMarker
+        );
       }
     }
-  }
+  };
 }
 
 main();
