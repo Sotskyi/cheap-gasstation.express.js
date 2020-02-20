@@ -65,8 +65,8 @@ export default function startNavigation(updateLongitude,  updateLatitude, map, c
 
   let options = {
     enableHighAccuracy: false,
-    timeout: 0,
-    maximumAge: 0
+    // timeout: 0,
+    maximumAge:1500000
   };
 
   let id = navigator.geolocation.watchPosition(success, error, options);

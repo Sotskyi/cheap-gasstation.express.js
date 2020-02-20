@@ -26,10 +26,10 @@
       "Flying J",
       "Gant",
       "GasAmerica",
-      "Gas City, Ltd.",
+      
       "GasTrac",
       "Getty",
-      "Gas Land Petroleum",
+      "Petroleum",
       "Go-Mart",
       "Gulf",
       "Hele",
